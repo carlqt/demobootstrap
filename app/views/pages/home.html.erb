@@ -2,9 +2,14 @@
 
 <div class = "search">
 	<h1 class="srchtitle">Title Here</h1>
-	<%= text_field_tag 'search', nil, :placeholder => "Enter Title or Artist of book to search", :class => 'txtsearch'%>
-	<div class="btnSearch">
-		<%= submit_tag 'Find Book Now', :id => 'btnFind'%>
-		<%= submit_tag 'Advance Search', :id =>'btnAdvanceSrch'%>
-	</div>
+		<%= form_tag books_search_path, :method => 'get' do%>
+	
+			<%= text_field_tag :search, params[:search], :placeholder => "Enter Title or Author of book to search", :class => 'txtsearch'%>
+			<div class="btnSearch">
+				<%= submit_tag 'Find Book Now', :id => 'btnFind'%>
+			</div>	
+		<% end %>
+				<%#= submit_tag 'Some method', :id =>'btnAdvanceSrch'%>
+			
+
 </div>

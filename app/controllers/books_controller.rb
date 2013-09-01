@@ -39,6 +39,14 @@ class BooksController < ApplicationController
     @column_names = Book.column_names    
   end
   
+  def search
+    @books = Book.search(params[:search])
+    
+    @column_names = Book.all.column_names
+    
+    
+  end
+  
   private
     def book_params
       params.require(:book).permit(:title, :author, :genre, :no_of_items)

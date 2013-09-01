@@ -8,8 +8,11 @@ Demobootstrap::Application.routes.draw do
   get "books/destroy"
   get "books/show_all"
   
+  get "books/search"
+  
   devise_for :users
   get "pages/home"
+  get "pages/about"
   resources :books
   resources :borrow, only: [:show, :update]
   # The priority is based upon order of creation: first created -> highest priority.

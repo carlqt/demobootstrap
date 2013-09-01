@@ -17,6 +17,12 @@ class Book < ActiveRecord::Base
   validates :title, :author, :genre, :presence => true
 
   
-
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['title LIKE ? OR author LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 
 end
