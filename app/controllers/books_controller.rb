@@ -4,8 +4,7 @@ class BooksController < ApplicationController
   end
 
   def show
-    @books = Book.all
-    @column_names = Book.column_names
+
   end
 
   def create
@@ -17,14 +16,27 @@ class BooksController < ApplicationController
       render 'new'
     end
   end
-
-  def update
+  
+  def edit
+    @book = Book.find(params[:id])
   end
 
-  def edit
+  def update
+   @book = Book.find(params[:id])
+    
+    if @book.update_attributes(book_params)
+      redirect_to books_show_all_path, :flash => { :success => "Update Successful" }
+    else
+      render "edit"
+    end
   end
 
   def destroy
+  end
+  
+  def show_all
+    @books = Book.all
+    @column_names = Book.column_names    
   end
   
   private

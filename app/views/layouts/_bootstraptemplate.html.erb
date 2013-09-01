@@ -9,9 +9,10 @@
           <a class="brand" href="#">Library shelf</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><%= link_to "Home", root_path%></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+              
               	<!-- dropdown html code -->
               	<ul class="nav">
 				  <li class="dropdown">
@@ -21,8 +22,24 @@
 				      </a>
 				    <ul class="dropdown-menu">
 				      <!-- links -->
-				      <li><%= link_to "Show all", '#'%></li>
-				      <li><%= link_to "Add books", '#'%></li>
+				      <li><%= link_to "Show all", books_show_all_path	%></li>
+				      <li><%= link_to "Add books", new_book_path%></li>
+				    </ul>
+				  </li>
+				</ul>
+				
+				<!-- login code -->
+				
+              	<ul class="nav">
+				  <li class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        Login
+				        <b class="caret"></b>
+				      </a>
+				    <ul class="dropdown-menu">
+				      <!-- links -->
+				      <li><%= link_to "Sign up", new_user_registration_path%></li>
+				      <li><%= link_to "Login", new_user_session_path%></li>
 				    </ul>
 				  </li>
 				</ul>

@@ -13,7 +13,7 @@
 
 class Book < ActiveRecord::Base
   
-  validates :no_of_items, :numericality => { :greater_than => 0 }, :presence => true
+  validates :no_of_items, :numericality => { :greater_than_or_equal_to => 0 }, :presence => true
   validates :title, :author, :genre, :presence => true
 
   

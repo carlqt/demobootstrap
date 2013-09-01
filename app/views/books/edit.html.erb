@@ -1,2 +1,42 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<h1>Edit Books</h1>
+<p>Find me in app/views/books/show.html.erb</p>
+
+<p>			
+	
+			
+</p>
+
+
+
+<div class="form-horizontal">
+	<div class="control-group form-inline">
+	<%= form_for @book do |f| %>
+		<p>
+			<div class="fields">
+				<%= f.label :title, "Title:"%>
+				<%= f.text_field :title %><br/><br/>
+			</div>
+			
+			<div class="fields">
+				<%= f.label :author, "Author:" %>
+				<%= f.text_field :author %><br/><br/>
+			</div>
+			
+			<div class="fields">
+				<%= f.label :no_of_items, "No. of Items:" %>
+				<%= f.text_field :no_of_items%><br/><br/>
+			</div>
+			
+			<div class="fields">
+				<%= f.label :genre, "Genre:" %>
+				<%= f.text_field :genre%><br/><br/>
+				
+			</div>
+						
+			<p>
+				<%= submit_tag "Update"%>
+			</p>
+		</p>
+	<% end %>
+	</div>
+</div>

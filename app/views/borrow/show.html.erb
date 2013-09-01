@@ -1,0 +1,21 @@
+<h1>Borrow</h1>
+
+<p>			
+	<%= render 'shared/error_message'%>
+			
+</p>
+
+
+
+<div class="borrowprofile">
+	<p><strong>Title:</strong> <%= @book.title%></p>
+	
+	<p><strong>Author:</strong> <%= @book.author%></p>
+	
+	<p><strong>Genre:</strong> <%= @book.genre%></p>
+	
+	<p><strong>No of items:</strong> <%= @book.no_of_items%></p>
+</div>
+<p>
+<%= button_to "Borrow", borrow_path(@book), :method => "patch", :data => {:confirm => "Are you sure?"} %>
+</p>

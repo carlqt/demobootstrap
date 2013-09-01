@@ -6,10 +6,12 @@ Demobootstrap::Application.routes.draw do
   get "books/update"
   get "books/edit"
   get "books/destroy"
-  get "books" => "books/show_all"
+  get "books/show_all"
+  
   devise_for :users
   get "pages/home"
   resources :books
+  resources :borrow, only: [:show, :update]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
