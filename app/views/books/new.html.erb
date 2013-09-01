@@ -6,10 +6,11 @@
 <% end %>
 
 
+<%= render 'shared/error_message' %>
+
 <div class="form-horizontal">
-	<div class="control-group row-fluid form-inline">
+	<div class="control-group form-inline">
 	<%= form_for @books do |f| %>
-			<%= render 'shared/error_message' %>
 		<p>
 			<div class="fields">
 				<%= f.label :title, "Title:"%>

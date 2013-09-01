@@ -4,6 +4,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @books = Book.all
+    @column_names = Book.column_names
   end
 
   def create

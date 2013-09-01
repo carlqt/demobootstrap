@@ -12,8 +12,25 @@
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+              	<!-- dropdown html code -->
+              	<ul class="nav">
+				  <li class="dropdown">
+				    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        Options
+				        <b class="caret"></b>
+				      </a>
+				    <ul class="dropdown-menu">
+				      <!-- links -->
+				      <li><%= link_to "Show all", '#'%></li>
+				      <li><%= link_to "Add books", '#'%></li>
+				    </ul>
+				  </li>
+				</ul>
+				
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
+    
+

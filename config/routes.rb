@@ -6,6 +6,7 @@ Demobootstrap::Application.routes.draw do
   get "books/update"
   get "books/edit"
   get "books/destroy"
+  get "books" => "books/show_all"
   devise_for :users
   get "pages/home"
   resources :books

@@ -1,2 +1,24 @@
 <h1>Books#show</h1>
 <p>Find me in app/views/books/show.html.erb</p>
+
+
+	<table border="1">
+	<% @column_names.each do |column_name| %>
+		<% if column_name != "id" && column_name != "created_at" && column_name != "updated_at"%>
+			<td>
+				<strong><%= column_name.capitalize %></strong>		
+			</td>
+		<% end %>
+	<% end %>
+			
+	<% @books.each do |book| %>
+	
+	
+		<tr>
+			<td><%= link_to book.title, book_path(book)%></td>
+			<td><%= book.author%></td>
+			<td><%= book.genre%></td>
+			<td><%= book.no_of_items%></td>		
+		</tr>
+	<%end%>	
+	</table>
