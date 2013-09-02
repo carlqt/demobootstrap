@@ -13,6 +13,8 @@ class BooksController < ApplicationController
     if @books.save
       redirect_to new_book_path, :flash => { :success => "Book Added"}
     else
+      @var = "book"
+      @command = "added"
       render 'new'
     end
   end
