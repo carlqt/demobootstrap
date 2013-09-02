@@ -4,7 +4,7 @@
 	<h1 class="srchtitle">Title Here</h1>
 		<%= form_tag books_search_path, :method => 'get' do%>
 	
-			<%= text_field_tag :search, params[:search], :placeholder => "Enter Title or Author of book to search", :class => 'txtsearch'%>
+			<%= text_field_tag :search, params[:search], :placeholder => "Enter Title or Author of book to search", :class => 'txtsearch', :autofocus => true%>
 			<div class="btnSearch">
 				<%= submit_tag 'Find Book Now', :id => 'btnFind'%>
 			</div>	
