@@ -9,6 +9,10 @@ Demobootstrap::Application.routes.draw do
   get "books/show_all"
   
   get "books/search"
+  get "users/profile(/:id)" => "pages#profile", :as => "profile_page"
+  put "users/profile(/:id)" => "pages#return"
+  
+  
   
   devise_for :users
   get "pages/home"

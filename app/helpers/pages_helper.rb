@@ -1,10 +1,16 @@
 module PagesHelper
   
-  def logo(image)
-    image = image + ".jpg"
+  def diff(id)
+    @id = id
     
-    image_tag(image, :alt => "bakeshop logo", :class => "round")
+    if @id != @prev_id
+      @prev_id = id
+      return true
+    else
+      @prev_id = id
+      return false
+    end
+    
   end
-  
   
 end

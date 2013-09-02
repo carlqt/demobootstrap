@@ -1,0 +1,37 @@
+<h1>User Profile</h1>
+
+<div class ="profile">
+	<p><span>Name:</span> <%= @profile.name%></p>
+	
+	<p><span> Userame:</span> <%= @profile.username%></p>
+	
+	<p><span>Email:</span> <%= @profile.email%></p>
+</div>
+<br/>
+<p>
+	<h2>Current books borrowed:</h2>
+</p>
+
+
+	<% @profile.loan.each do |bridge| %>
+		<% @book_profile = @profile.book.find(bridge.book_id) %>
+		<p>
+			<% if bridge.return_date == nil  %>
+				<% if diff(bridge.book_id)%>   <!-- diff method is defined in pages/helper -->
+				
+					<div class = "container-book">
+						<p><span>Title:</span> <%= @book_profile.title%></p>
+						
+						<p><span> Author:</span> <%= @book_profile.author%></p>
+						
+						<p><span>Genre:</span> <%= @book_profile.genre%></p>
+						
+						<p><span>Numbers borrowed:</span> <%= @profile.loan.where(:book_id => bridge.book_id, :return_date => nil).count%></p>
+						
+						<p><%= button_to "Return", profile_page_path(bridge.id), :method => "put", :data => {:confirm => "Return this book?"} %></p>
+					</div>
+				<% end %>
+			<% end %>
+		<p>
+	<% end %>
+</div>

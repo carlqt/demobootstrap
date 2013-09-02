@@ -11,7 +11,10 @@
             <ul class="nav">
               <li class="active"><%= link_to "Home", root_path%></li>
               <li><%= link_to "About", pages_about_path%></li>
-              <li><a href="#contact">Contact</a></li>
+              
+		      <% if user_signed_in? %>
+		      		<li><%= link_to "Profile", profile_page_path(current_user.id)%></li>
+		      <% end %>
               
               	<!-- dropdown html code -->
               	<ul class="nav">

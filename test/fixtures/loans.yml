@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: loans
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  book_id     :integer
+#  loan_date   :datetime
+#  return_date :datetime
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  book_id: 1
+  loan_date: 2013-09-02 12:33:56
+  return_date: 2013-09-02 12:33:56
+
+two:
+  user_id: 1
+  book_id: 1
+  loan_date: 2013-09-02 12:33:56
+  return_date: 2013-09-02 12:33:56
