@@ -16,7 +16,8 @@ class PagesController < ApplicationController
     @book_profile = Book.find(@loan_profile.book_id)
     @book_profile.no_of_items += 1
     @book_profile.save
+    flash[:notice] = "Book Returned Successfully"
     
-    redirect_to :controller=>'pages',:action=>'profile', :id => current_user.id, :notice => "Book Returned Successfully"
+    redirect_to :controller=>'pages',:action=>'profile', :id => current_user.id
   end
 end
