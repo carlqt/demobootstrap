@@ -19,16 +19,18 @@
 	<table border="1">
 	<% @column_names.each do |column_name| %>
 		<% if column_name != "id" && column_name != "created_at" && column_name != "updated_at"%>
-			<td>
-				
-				<strong><%= column_name.capitalize %></strong>
-						
-			</td>
+				<td><strong><%= column_name.capitalize %></strong></td>
 		<% end %>
 	<% end %>
-		<td>
-			<strong>Action</strong>
-		</td>		
+	
+	<% if user_signed_in? %>
+		<% if current_user.is_admin %>
+			<td>
+				<strong>Action</strong>
+			</td>		
+		<% end %>
+	<%end %>
+	
 	<% @books.each do |book| %>
 	
 	
@@ -37,7 +39,13 @@
 			<td><%= book.author%></td>
 			<td><%= book.genre%></td>
 			<td><%= book.no_of_items%></td>
-			<td><%= link_to 'Edit', edit_book_path(book) %></td>		
+			
+			<% if user_signed_in? %>
+				<% if current_user.is_admin %>
+					<td><%= link_to 'Edit', edit_book_path(book) %></td>
+				<% end %>	
+			<% end %>
+			
 		</tr>
 	<%end%>	
 	</table>

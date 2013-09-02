@@ -9,7 +9,7 @@
 <body>
 	<%= render 'layouts/bootstraptemplate'%>
 	<% if user_signed_in?%>
-		I AM SIGNED IN and my ID is<%= current_user.email%>
+		
 	<% end %>
 	<div class='container'>
 		<%= yield %>

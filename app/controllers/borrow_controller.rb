@@ -22,6 +22,8 @@ class BorrowController < ApplicationController
         @book.no_of_items = 0
       end
       
+      @var = "book"
+      @command = "borrowed"
       render "show"
     end
   end

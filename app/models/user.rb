@@ -16,6 +16,8 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  username               :string(255)
+#  name                   :string(255)
+#  is_admin               :boolean
 #
 
 class User < ActiveRecord::Base

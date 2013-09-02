@@ -23,7 +23,13 @@
 				    <ul class="dropdown-menu">
 				      <!-- links -->
 				      <li><%= link_to "Show all", books_show_all_path	%></li>
-				      <li><%= link_to "Add books", new_book_path%></li>
+				      
+				      <% if user_signed_in? %>
+				      	<% if current_user.is_admin %>
+				      		<li><%= link_to "Add books", new_book_path%></li>
+				      	<% end %>
+				      <% end %>
+				      
 				    </ul>
 				  </li>
 				</ul>
