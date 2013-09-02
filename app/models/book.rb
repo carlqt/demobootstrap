@@ -20,8 +20,9 @@ class Book < ActiveRecord::Base
 
   
   def self.search(search)
+    search = search.downcase
     if search
-      find(:all, :conditions => ['title LIKE ? OR author LIKE ?', "%#{search}%", "%#{search}%"])
+      find(:all, :conditions => ['lower(title) LIKE ? OR lower(author) LIKE ?', "%#{search}%", "%#{search}%"])
     else
       find(:all)
     end
