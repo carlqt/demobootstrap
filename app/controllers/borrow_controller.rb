@@ -17,7 +17,7 @@ class BorrowController < ApplicationController
     
     if @book.update_attributes(params[:book])
       loan_book @book.id
-      redirect_to books_show_all_path, :notice => "Update Successful"
+      redirect_to books_show_all_path, :notice => "You have borrowed #{@book.title}"
     else
       
       if @book.no_of_items < 0

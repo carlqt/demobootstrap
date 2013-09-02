@@ -26,6 +26,8 @@
 						
 						<p><span>Genre:</span> <%= @book_profile.genre%></p>
 						
+						<p><span>Date Borrowed:</span> <%= bridge.loan_date.strftime('%B %e, %Y') %></p>
+						
 						<p><span>Numbers borrowed:</span> <%= @profile.loan.where(:book_id => bridge.book_id, :return_date => nil).count%></p>
 						
 						<p><%= button_to "Return", profile_page_path(bridge.id), :method => "put", :data => {:confirm => "Return this book?"} %></p>
