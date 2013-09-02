@@ -32,6 +32,9 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to books_show_all_path, :flash => { :success => "Delete Successful" }
   end
   
   def show_all

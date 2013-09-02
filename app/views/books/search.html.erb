@@ -25,11 +25,10 @@
 	
 	<% if user_signed_in? %>
 		<% if current_user.is_admin %>
-			<td>
-				<strong>Action</strong>
-			</td>		
-		<% end %>
-	<%end %>
+			<td><%= link_to 'Edit', edit_book_path(book) %></td>
+			<td><%= link_to 'Delete', book_path(book), :method => :delete, :data => {:confirm => "Are you sure?"} %></td>
+		<% end %>	
+	<% end %>
 		
 	<% @books.each do |book| %>
 	

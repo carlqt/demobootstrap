@@ -5,7 +5,7 @@ Demobootstrap::Application.routes.draw do
   get "books/create"
   get "books/update"
   get "books/edit"
-  get "books/destroy"
+  
   get "books/show_all"
   
   get "books/search"
