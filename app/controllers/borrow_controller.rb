@@ -1,7 +1,7 @@
 class BorrowController < ApplicationController
   
-  
-  
+  #before_filter :check_login, :only => [:show]
+  before_filter :authenticate_user!, :only => [:show]
   def show
     @book = Book.find(params[:id])
     @books = Book.new
